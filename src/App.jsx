@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { X, AlertTriangle, Loader, CheckCircle } from "lucide-react";
 
 // Custom MessageBox component
@@ -80,12 +80,15 @@ const App = () => {
     setMessage(null);
 
     try {
-      // Call your backend (which calls Roboflow securely)
-      const res = await fetch("http://localhost:8080/api/classify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ imageData: image }),
-      });
+      // ✅ Use your deployed backend URL (Vercel)
+      const res = await fetch(
+        "https://backend-blush-three-91.vercel.app/api/classify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ imageData: image }),
+        }
+      );
 
       const data = await res.json();
 
@@ -190,6 +193,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 
