@@ -82,7 +82,7 @@ const App = () => {
     try {
       // ✅ Use your deployed backend URL (Vercel)
       const res = await fetch(
-        "https://backend-blush-three-91.vercel.app/api/classify",
+        "https://backend-0pwz.onrender.com/api/classify",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
